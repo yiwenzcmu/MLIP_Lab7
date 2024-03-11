@@ -19,7 +19,7 @@ In this step, we create a virtual environment, install MLFlow, and set up a Data
 2. Run:
    ```
    source lab7/bin/activate
-   pip install mlflow 
+   pip install mlflow databricks-sdk
    ```
    to activate virtual environment and install mlflow package
 ### Setup Databricks Community Edition Account
