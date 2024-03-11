@@ -1,7 +1,6 @@
 # MLIP Lab7 - Manage and Track Machine Learning Project with MLFlow
-In this lab, you will explore how to manage and track Machine Learning Projects using MLFlow. Although MLFlow is helpful to model provenance in team project M3, you should use the personal machine to avoid multiple installations and environmental conflict..</br>
-MLFLow is a powerful tool for MLops. It provides  </br>
-The testing tool we use is [pytest](https://docs.pytest.org/en/7.1.x/index.html). It is a light weight tool that collect test cases automatically. 
+In this lab, you will explore how to manage and track Machine Learning Projects using [MLFlow](https://mlflow.org/docs/latest/index.html). Although MLFlow is helpful to model provenance in team project M3, you should use the personal machine to avoid multiple installations and environmental conflict.</br></br>
+MLFLow is a powerful tool enables good practices aligned with MLOps principles. MLFlow can track experiment results during development for late comparison. It can perform version control on dataset and model and store versioned model objects to make your project reproducible and manageable.</br></br>
 To receive credit for this lab, show your work to the TA during recitation.
 
 ## Deliverables
