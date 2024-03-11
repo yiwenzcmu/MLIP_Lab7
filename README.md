@@ -8,3 +8,5 @@ To receive credit for this lab, please show your all deliverables to the TA duri
 - [ ] Complete the `jenkinsfile` to make the Jenkins pipeline test the repo during each build. Explain your understanding of what the given Jenkinsfile does.
 - [ ] Complete the `test_data_split` function in `test.py` to test data split step.
 
+## Environment Setup
+
