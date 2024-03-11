@@ -1,1 +1,4 @@
 lab7/
+mlartifacts
+mlruns
+__pycache__

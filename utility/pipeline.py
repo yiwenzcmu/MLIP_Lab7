@@ -1,5 +1,7 @@
 # This file is designed based on MlFlow tutorial
 # https://mlflow.org/docs/latest/getting-started/intro-quickstart/index.html
+
+
 from sklearn import datasets
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
@@ -7,7 +9,7 @@ from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_sc
 import numpy as np
 import pandas as pd
 
-def data_preprocessing()-> Tuple[np.ndarray]:
+def data_preprocessing()-> tuple[np.ndarray]:
     """Generate IRIS dataset's train and test dataset
 
     Returns:
@@ -26,8 +28,8 @@ def data_preprocessing()-> Tuple[np.ndarray]:
 
 def train_logistic_regression(
     X_train:np.ndarray, 
-    X_test:np.ndarray,
-    params: dict = {},
+    y_train:np.ndarray,
+    params: dict,
     ) -> LogisticRegression:
     """Function that generates a trained logistic regression model
     based on the training dataset and hyperparameters.
@@ -37,7 +39,28 @@ def train_logistic_regression(
         X_test (np.ndarray): Test dataset of shape (data point num, 1)
 
     Returns:
-        LogisticRegression: Trained sklearn logistic regression model
+        LogisticRegres# Start an MLflow run
+with mlflow.start_run():
+    # Log the hyperparameters
+    mlflow.log_params(params)
+
+    # Log the loss metric
+    mlflow.log_metric("accuracy", accuracy)
+
+    # Set a tag that we can use to remind ourselves what this run was for
+    mlflow.set_tag("Training Info", "Basic LR model for iris data")
+
+    # Infer the model signature
+    signature = infer_signature(X_train, lr.predict(X_train))
+
+    # Log the model
+    model_info = mlflow.sklearn.log_model(
+        sk_model=lr,
+        artifact_path="iris_model",
+        signature=signature,
+        input_example=X_train,
+        registered_model_name="tracking-quickstart",
+    )sion: Trained sklearn logistic regression model
     """
     # Train the model
     lr = LogisticRegression(**params)
@@ -46,7 +69,7 @@ def train_logistic_regression(
 
 def evaluation(
     model: LogisticRegression,
-    y_train:np.ndarray, 
+    X_test:np.ndarray, 
     y_test:np.ndarray,
 ) -> float:
     """evaluate the accuracy of the trained model
@@ -60,7 +83,7 @@ def evaluation(
         float: accuracy of the trained model
     """
     # Predict on the test set
-    y_pred = lr.predict(X_test)
+    y_pred = model.predict(X_test)
 
     # Calculate metrics
     accuracy = accuracy_score(y_test, y_pred)
