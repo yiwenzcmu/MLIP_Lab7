@@ -10,7 +10,7 @@ To receive credit for this lab, please show your all deliverables to the TA duri
 
 ## Environment Setup
 In this step, we create a virtual environment, install MLFlow, and set up a DataBricks Community Edition account. First, clone [Lab7 repo](git@github.com:JayYu0116/MLIP_Lab7.git) to your machine. Run `cd MLIP_Lab7` to enter into the work directory. Now let us move on to the virtual environment set up.
-### Create Virtual Environment 
+### Setup Virtual Environment 
 1. Run:
    ```bash
    python -m venv lab7
@@ -22,3 +22,9 @@ In this step, we create a virtual environment, install MLFlow, and set up a Data
    pip install mlflow 
    ```
    to activate virtual environment and install mlflow package
+### Setup Databricks Community Edition Account
+1. Go to the [login page of Databricks CE](https://community.cloud.databricks.com/login.html)
+2. Click on ==Sign Up== at the right bottom of the login box
+3. Fill out all the necessary information. Remeber to choose community edition instead of any cloud services.
+
+### Complete Model Training and Evaluation
