@@ -9,4 +9,6 @@ To receive credit for this lab, please show your all deliverables to the TA duri
 - [ ] Complete the `test_data_split` function in `test.py` to test data split step.
 
 ## Environment Setup
-
+In this step, we create a virtual environment, install MLFlow, and set up a DataBricks Community Edition account. First, clone [Lab7 repo](git@github.com:JayYu0116/MLIP_Lab7.git) to your machine. Run `cd MLIP_Lab7` to enter into the work directory. Now let us move on to the virtual environment set up.
+### Create Virtual Environment 
+1. Use python [venv](https://docs.python.org/3/library/venv.html) to create a virtual
