@@ -1,7 +1,7 @@
 # MLIP Lab7 - Manage and Track Machine Learning Project with MLFlow
-In this lab, you will explore how to manage and track Machine Learning Projects using [MLFlow](https://mlflow.org/docs/latest/index.html). Although MLFlow is helpful to model provenance in team project M3, you should use the personal machine to avoid multiple installations and environmental conflict.</br></br>
-MLFLow is a powerful tool enables good practices aligned with MLOps principles. MLFlow can track experiment results during development for late comparison. It can perform version control on dataset and model and store versioned model objects to make your project reproducible and manageable.</br></br>
-To receive credit for this lab, show your work to the TA during recitation.
+In this lab, you will explore how to manage and track Machine Learning Projects using [MLFlow](https://mlflow.org/docs/latest/index.html). Although MLFlow is helpful to team project M3, We recommend you to use the personal machine to avoid multiple installations and environmental conflict.</br></br>
+MLFLow is a powerful tool that enables good practices aligned with MLOps principles. MLFlow can track experiment results during development for late comparison. It can perform version control on dataset and model and store versioned model objects to make your project reproducible and manageable.</br></br>
+To receive credit for this lab, please show your all deliverables to the TA during recitation.
 
 ## Deliverables
 - [ ] Show correct configuration of a Jenkins pipeline on **forked [Lab6 Github Repo](https://github.com/JayYu0116/MLIP_Lab6/)**. The build process must automatically fetch Jenkinsfile and run pipeline according to it.
