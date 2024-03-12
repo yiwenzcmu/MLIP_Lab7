@@ -22,10 +22,20 @@ In this step, we create a virtual environment, install MLFlow, and set up a Data
    pip install mlflow databricks-sdk
    ```
    to activate virtual environment and install mlflow package
-### Setup Databricks Community Edition Account
+### Setup MLFLow Tracking Server
+#### Option 1(Please use this option in lab7): Run MLFLow Tracking Server on Localhost
+1. Run `mlflow server --host 127.0.0.1 --port 6001` to launch tracking server on port 6001.
+2. Visit [http://127.0.0.1:6001](http://127.0.0.1:6001) to verify your MLFlow Tracking Server is running.
+#### Option 2: Use Databricks free MLFlow Server
+This option does not provide model registry. This is provided because a cloud server is better at team collaboration than local server.
 1. Go to the [login page of Databricks CE](https://community.cloud.databricks.com/login.html)
 2. Click on ==Sign Up== at the right bottom of the login box
 3. Fill out all the necessary information. Remeber to choose community edition instead of any cloud services.
+When you set tracking server, instead of running `mlflow.set_tracking_uri("<your tracking server uri>")` in the python script, you should run `mlflow.login` and provide:
+- Databricks Host: https://community.cloud.databricks.com/
+- Username: Your Databricks CE email address.
+- Password: Your Databricks CE password.
+
 
 ### Complete Model Training and Evaluation
 
