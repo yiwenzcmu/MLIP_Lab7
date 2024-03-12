@@ -9,7 +9,7 @@ To receive credit for this lab, please show your all deliverables to the TA duri
 - [ ] Deploy the MLFlow model as a docker container. Show TA the console output of running `./test_inference.sh`.
 
 ## Environment Setup
-In this step, we create a virtual environment, install MLFlow, and set up a tracking server. To begin this section, please clone [Lab7 repo](https://github.com/JayYu0116/MLIP_Lab7) to your machine. Run `cd MLIP_Lab7` to enter into the work directory. Now let us move on to the virtual environment set up.
+In this step, we create a virtual environment, install MLFlow, and set up a tracking server. To begin this section, please clone [Lab7 repo](https://github.com/JayYu0116/MLIP_Lab7) to your machine. Run `cd MLIP_Lab7` to enter into the work directory. Then we begin the virtual environment setup"
 ### Setup Virtual Environment 
 1. Run:
    ```bash
