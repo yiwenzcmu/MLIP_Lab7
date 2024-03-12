@@ -39,31 +39,31 @@ For more details, please visit [Additional Reference](#Additional-Reference)
 
 ## Complete the Machine Learning Pipeline
 In this step, we try to build a simple machine learning project to simulate real-world scenario. In _WORK_DIR/utility/pipeline.py_, we defined 3 utility functions: `data_preprocessing` function that generates train and test dataset, `train_logistic_regression` that generates trained sklearn logistic regression model, and `evaluation` function that returns accuracy of trained model on test dataset. <br><br>
-Now, we use these 3 funtions to build a training pipeline in _WORK_DIR/train_model.py_ and a inference pipeline in _WORK_DIR/load_model.py_. In this process, please check documentation in _WORK_DIR/utility/pipeline.py_ carefully. They are very helpful.
+Now, we use these 3 funtions to build a training pipeline in _WORK\_DIR/train\_model.py_ and a inference pipeline in _WORK\_DIR/load\_model.py_. In this process, please check documentation in _WORK\_DIR/utility/pipeline.py_ carefully. They are very helpful.
 ### Complete the Training Pipeline
-In this step, we modify _WORK_DIR/train_model.py_ only.
+In this step, we modify _WORK\_DIR/train\_model.py_ only.
 1. Complete the TODO in Line 22 to extract the train and test dataset from `pipeline.data_preprocessing`. This function accept now arguments and returns `X_train, X_test, y_train, y_test`
 2. Complete the TODO in Line 33 to obtain trained model from `pipeline.train_logistic_regression`. This function accepts X_train, y_train, params (sklearn logistic regression parameters) and output a fitted regressor.
 3. Complete the TODO in Line 36 to obtain accuracy score from `pipeline.evaluation`. This function accepts X_test, y_test, model and output a float type accuracy score.
 Now, we have a complete machine learning training pipeline without MLFlow component.
 
 ### Complete the Inference Pipeline
-In this step, we modify _WORK_DIR/test_model.py_ only.
+In this step, we modify _WORK\_DIR/load\_model.py_ only.
 1. Complete the TODO in Line 20 to predict the numpy array datapoint. You need to convert the numpy array to pandas Dataframe for inference due to the constrain of MLFlow.
 
 ## Complete MLFlow Components
 ### Complete the tracking and model registering process
-In this step, we complete the MLFLow tracking and model registering components in _WORK_DIR/train_model.py_ and _WORK_DIR/test_model.py_. **After the completion of _WORK_DIR/train_model.py_, we need to run it before the next step** because next step requires the tracking server to have a registered model already. <br><br>
-For _WORK_DIR/train_model.py_:
+In this step, we complete the MLFLow tracking and model registering components in _WORK\_DIR/train\_model.py_ and _WORK_DIR/load\_model.py_. **After the completion of _WORK\_DIR/train\_model.py_, we need to run it before the next step** because next step requires the tracking server to have a registered model already. <br><br>
+For _WORK\_DIR/train\_model.py_:
 1. Provide the tracking server uri in Line 10.
 2. Provide your own email as experiment name in Line 15.
 Now, please **run `python train_model.py`** to train the model and upload the model metrics and register the current model to MLFlow Tracking Server.
 
 ### Complete the loading process
 
-For _WORK_DIR/load_model.py_:
+For _WORK\_DIR/load\_model.py_:
 1. Provide the tracking server uri in Line 6.
-2. Provide the uri of registered model in Line 10. To obtain the uri, you need to visit your [tracking server webpage](http://127.0.0.1:6001). Clike the **Experiment** section on the top. Click your experiment on the left side. Click the runs under **run name** column. Click on the artifacts on the top. On the screen's right side, under **Make Prediction** section, you can see something like _logged_model = 'runs:/69c93a9c4bd14210871e7ee78483f30e/iris_model'_. **This string is the uri you need**. **Show TA this page for deliverable 2**
+2. Provide the uri of registered model in Line 10. To obtain the uri, you need to visit your [tracking server webpage](http://127.0.0.1:6001). Clike the **Experiment** section on the top. Click your experiment on the left side. Click the runs under **run name** column. Click on the artifacts on the top. On the screen's right side, under **Make Prediction** section, you can see something like _logged\_model = 'runs:/69c93a9c4bd14210871e7ee78483f30e/iris\_model'_. **This string is the uri you need**. **Show TA this page for deliverable 2**
 Now, please **run `python load_model.py`** This should print out a prediction on your screen. **Please show this to TA for deliverable 2.**
 
 ## Deploy MLFlow Registered Model as Docker Container.
