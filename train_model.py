@@ -6,30 +6,34 @@ import mlflow
 from utility import pipeline
 from mlflow.models import infer_signature
 
-# Set tht MLFlow server url
-mlflow.set_tracking_uri(uri="http://127.0.0.1:6363")
+# TODO: Set tht MLFlow tracking server uri
+uri = _________
+# Use mlflow.set_tracking_uri to set the uri
+mlflow.set_tracking_uri(uri)
 
 # Set experiment name
-email="zekail@andrew.cmu.edu"
-experiment_name=f"/Users/{email}/check-databricks-ce-connection"
+email="______@andrew.cmu.edu" # TODO: Use a customized experiment name
+experiment_name=f"{email}-lab7"
 mlflow.set_experiment(experiment_name)
 
 # Begin the model training and evaluation process
 
-# Prepare the dataset
-X_train,X_test,y_train,y_test=pipeline.data_preprocessing()
+# TODO: Generates train and test dataset using `pipeline.data_preprocessing` function
+X_train,X_test,y_train,y_test= ________
 
-# Train the model
+# Train the model:
 params = {
     "solver": "lbfgs",
-    "max_iter": 500,
+    "max_iter": 1000,:
     "multi_class": "auto",
     "random_state": 8888,
 }
-trained_model=pipeline.train_logistic_regression(X_train, y_train, params)
 
-# evaluate the model
-accuracy=pipeline.evaluation(trained_model,X_test,y_test)
+# TODO: Use `pipeline.train_logistic_regression` to generate trained model
+trained_model=__________________
+
+# TODO: use `pipeline.evaluation` to evaluate the model
+accuracy=_____________________
 
 # Log model and metrics to tracking serverhost>
 # Start an MLflow run
