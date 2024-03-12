@@ -22,7 +22,7 @@ X_train,X_test,y_train,y_test=pipeline.data_preprocessing()
 # Train the model
 params = {
     "solver": "lbfgs",
-    "max_iter": 1000,
+    "max_iter": 500,
     "multi_class": "auto",
     "random_state": 8888,
 }
@@ -53,5 +53,5 @@ with mlflow.start_run(run_name=run_name):
         artifact_path="iris_model",
         signature=signature,
         input_example=X_train,
-        registered_model_name="tracking-quickstart",
+        registered_model_name="IRIS_Model",
     )
