@@ -60,6 +60,7 @@ For _WORK_DIR/train_model.py_:
 Now, please **run `python train_model.py`** to train the model and upload the model metrics and register the current model to MLFlow Tracking Server.
 
 ### Complete the loading process
+
 For _WORK_DIR/load_model.py_:
 1. Provide the tracking server uri in Line 6.
 2. Provide the uri of registered model in Line 10. To obtain the uri, you need to visit your [tracking server webpage](http://127.0.0.1:6001). Clike the **Experiment** section on the top. Click your experiment on the left side. Click the runs under **run name** column. Click on the artifacts on the top. On the screen's right side, under **Make Prediction** section, you can see something like _logged_model = 'runs:/69c93a9c4bd14210871e7ee78483f30e/iris_model'_. **This string is the uri you need**. **Show TA this page for deliverable 2**
