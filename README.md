@@ -5,8 +5,8 @@ To receive credit for this lab, please show your all deliverables to the TA duri
 
 ## Deliverables
 - [ ] Show the logs of successfully launched MLFlow Tracking Server in the terminal and the UI interface of MLFlow Tracking Server. Explain to TA your process of setting up the environment for this lab.
-- [ ] Complete the `jenkinsfile` to make the Jenkins pipeline test the repo during each build. Explain your understanding of what the given Jenkinsfile does.
-- [ ] Complete the `test_data_split` function in `test.py` to test data split step.
+- [ ] Complete the `train_model.py` and `load_model.py`. Show TA your uploaded runs in Tracking Server webpage and the console output of running `load_model.py`
+- [ ] Deploy the MLFlow model as a docker container. Show TA the console output of running `./test_inference.sh`
 
 ## Environment Setup
 In this step, we create a virtual environment, install MLFlow, and set up a tracking server. To begin this section, please clone [Lab7 repo](https://github.com/JayYu0116/MLIP_Lab7) to your machine. Run `cd MLIP_Lab7` to enter into the work directory. Now let us move on to the virtual environment set up.
@@ -51,8 +51,19 @@ Now, we have a complete machine learning training pipeline without MLFlow compon
 In this step, we modify _WORK_DIR/test_model.py_ only.
 1. Complete the TODO in Line 20 to predict the numpy array datapoint. You need to convert the numpy array to pandas Dataframe for inference due to the constrain of MLFlow.
 
-## Complete MLFlow Tracking and Model Registering Process
-In this step, we complete the MLFLow tracking and model registering components in _WORK_DIR/train_model.py_ and _WORK_DIR/test_model.py_. This help us to understand performance change after each run and govern the model version. <br><br>
+## Complete MLFlow Components
+### Complete the tracking and model registering process
+In this step, we complete the MLFLow tracking and model registering components in _WORK_DIR/train_model.py_ and _WORK_DIR/test_model.py_. **After the completion of _WORK_DIR/train_model.py_, we need to run it before the next step** because next step requires the tracking server to have a registered model already. <br><br>
+For _WORK_DIR/train_model.py_:
+1. Provide the tracking server uri in Line 10.
+2. Provide your own email as experiment name in Line 15.
+Now, please **run `python train_model.py`** to train the model and upload the model metrics and register the current model to MLFlow Tracking Server.
+### Complete the loading process
+For _WORK_DIR/load_model.py_:
+1. Provide the tracking server uri in Line 6.
+2. Provide the uri of registered model in Line 10. To obtain the uri, you need to visit your [tracking server webpage](http://127.0.0.1:6001). Clike the **Experiment** section on the top. Click your experiment on the left side. Click the runs under **run name** column. Click on the artifacts on the top. On the screen's right side, under **Make Prediction** section, you can see something like _logged_model = 'runs:/69c93a9c4bd14210871e7ee78483f30e/iris_model'_. **This string is the uri you need**.
+Now, please **run `python load_model.py`** This should print out a prediction on your screen. **Please show this to TA as the second deliverable.**
 
+## Deploy MLFlow Registered Model as Docker Container.
 ### Additional Reference
 [Explore MLFlow with Databricks](https://mlflow.org/blog/databricks-ce)
