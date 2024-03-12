@@ -58,6 +58,7 @@ For _WORK_DIR/train_model.py_:
 1. Provide the tracking server uri in Line 10.
 2. Provide your own email as experiment name in Line 15.
 Now, please **run `python train_model.py`** to train the model and upload the model metrics and register the current model to MLFlow Tracking Server.
+
 ### Complete the loading process
 For _WORK_DIR/load_model.py_:
 1. Provide the tracking server uri in Line 6.
