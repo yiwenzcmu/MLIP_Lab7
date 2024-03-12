@@ -6,7 +6,7 @@ To receive credit for this lab, please show your all deliverables to the TA duri
 ## Deliverables
 - [ ] Show the logs of successfully launched MLFlow Tracking Server in the terminal and the UI interface of MLFlow Tracking Server. Explain to TA your process of setting up the environment for this lab.
 - [ ] Complete the `train_model.py` and `load_model.py`. Show TA your uploaded runs in Tracking Server webpage and the console output of running `load_model.py`
-- [ ] Deploy the MLFlow model as a docker container. Show TA the console output of running `./test_inference.sh`
+- [ ] Deploy the MLFlow model as a docker container. Show TA the console output of running `./test_inference.sh`.
 
 ## Environment Setup
 In this step, we create a virtual environment, install MLFlow, and set up a tracking server. To begin this section, please clone [Lab7 repo](https://github.com/JayYu0116/MLIP_Lab7) to your machine. Run `cd MLIP_Lab7` to enter into the work directory. Now let us move on to the virtual environment set up.
@@ -61,9 +61,13 @@ Now, please **run `python train_model.py`** to train the model and upload the mo
 ### Complete the loading process
 For _WORK_DIR/load_model.py_:
 1. Provide the tracking server uri in Line 6.
-2. Provide the uri of registered model in Line 10. To obtain the uri, you need to visit your [tracking server webpage](http://127.0.0.1:6001). Clike the **Experiment** section on the top. Click your experiment on the left side. Click the runs under **run name** column. Click on the artifacts on the top. On the screen's right side, under **Make Prediction** section, you can see something like _logged_model = 'runs:/69c93a9c4bd14210871e7ee78483f30e/iris_model'_. **This string is the uri you need**.
-Now, please **run `python load_model.py`** This should print out a prediction on your screen. **Please show this to TA as the second deliverable.**
+2. Provide the uri of registered model in Line 10. To obtain the uri, you need to visit your [tracking server webpage](http://127.0.0.1:6001). Clike the **Experiment** section on the top. Click your experiment on the left side. Click the runs under **run name** column. Click on the artifacts on the top. On the screen's right side, under **Make Prediction** section, you can see something like _logged_model = 'runs:/69c93a9c4bd14210871e7ee78483f30e/iris_model'_. **This string is the uri you need**. **Show TA this page for deliverable 2**
+Now, please **run `python load_model.py`** This should print out a prediction on your screen. **Please show this to TA for deliverable 2.**
 
 ## Deploy MLFlow Registered Model as Docker Container.
+Now, we use MLFlow to help us with deployment. MLFlow can pack a registered model into a docker container server. It also provides inference protocol in [Local Inference Spec Page](https://mlflow.org/docs/latest/deployment/deploy-model-locally.html#local-inference-server-spec). Let us build a docker container based on run id we previously obtained in [Complete the loading process](#Complete-the-loading-process).
+1. According to [MLFlow models documentation](https://mlflow.org/docs/latest/cli.html?highlight=docker#mlflow-models-build-docker), run `mlflow models build-docker --model-uri "<Previously obtained runs:/ uri>" --name "lab7"` to build the docker image.
+2. Run `sudo docker run -p 6002:8080 "lab7"` to launch the server.
+3. Run `WORK_DIR/test_inference.sh` to send a test inference to the server. **Show TA the console output of test inference for deliverable 3.**
 ### Additional Reference
 [Explore MLFlow with Databricks](https://mlflow.org/blog/databricks-ce)
