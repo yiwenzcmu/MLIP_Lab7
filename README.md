@@ -4,7 +4,7 @@ MLFLow is a powerful tool that enables good practices aligned with MLOps princip
 To receive credit for this lab, please show your all deliverables to the TA during recitation.
 
 ## Deliverables
-- [ ] Show correct configuration of a Jenkins pipeline on **forked [Lab6 Github Repo](https://github.com/JayYu0116/MLIP_Lab6/)**. The build process must automatically fetch Jenkinsfile and run pipeline according to it.
+- [ ] Show the logs of successfully launched MLFlow Tracking Server in the terminal and the UI interface of MLFlow Tracking Server. Explain to TA your process of setting up the environment for this lab.
 - [ ] Complete the `jenkinsfile` to make the Jenkins pipeline test the repo during each build. Explain your understanding of what the given Jenkinsfile does.
 - [ ] Complete the `test_data_split` function in `test.py` to test data split step.
 
@@ -22,10 +22,11 @@ In this step, we create a virtual environment, install MLFlow, and set up a Data
    pip install mlflow databricks-sdk
    ```
    to activate virtual environment and install mlflow package
+--------
 ### Setup MLFLow Tracking Server
 #### Option 1(Please use this option in lab7): Run MLFLow Tracking Server on Localhost
-1. Run `mlflow server --host 127.0.0.1 --port 6001` to launch tracking server on port 6001.
-2. Visit [http://127.0.0.1:6001](http://127.0.0.1:6001) to verify your MLFlow Tracking Server is running.
+1. Run `mlflow server --host 127.0.0.1 --port 6001` to launch tracking server on port 6001. Show the logs in the terminal to TA for deliverable 1.
+2. Visit [http://127.0.0.1:6001](http://127.0.0.1:6001) to verify your MLFlow Tracking Server is running. Show the webpage in browser to TA for deliverable 1.
 #### Option 2: Use Databricks free MLFlow Server
 This option does not provide model registry. This is provided because a cloud server is better at team collaboration than local server.
 1. Go to the [login page of Databricks CE](https://community.cloud.databricks.com/login.html)
@@ -35,9 +36,9 @@ When you set tracking server, instead of running `mlflow.set_tracking_uri("<your
 - Databricks Host: https://community.cloud.databricks.com/
 - Username: Your Databricks CE email address.
 - Password: Your Databricks CE password.
-For more details, please visit [Additional Reference](###Additional Reference)
+For more details, please visit [Additional Reference](#Additional-Reference)
 
-### Complete Model Training and Evaluation
+### Complete the Machine Learning Pipeline
 
 
 ### Additional Reference
