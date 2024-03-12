@@ -9,7 +9,7 @@ To receive credit for this lab, please show your all deliverables to the TA duri
 - [ ] Complete the `test_data_split` function in `test.py` to test data split step.
 
 ## Environment Setup
-In this step, we create a virtual environment, install MLFlow, and set up a DataBricks Community Edition account. First, clone [Lab7 repo](git@github.com:JayYu0116/MLIP_Lab7.git) to your machine. Run `cd MLIP_Lab7` to enter into the work directory. Now let us move on to the virtual environment set up.
+In this step, we create a virtual environment, install MLFlow, and set up a tracking server. To begin this section, please clone [Lab7 repo](git@github.com:JayYu0116/MLIP_Lab7.git) to your machine. Run `cd MLIP_Lab7` to enter into the work directory. Now let us move on to the virtual environment set up.
 ### Setup Virtual Environment 
 1. Run:
    ```bash
@@ -22,7 +22,6 @@ In this step, we create a virtual environment, install MLFlow, and set up a Data
    pip install mlflow databricks-sdk
    ```
    to activate virtual environment and install mlflow package
---------
 ### Setup MLFLow Tracking Server
 #### Option 1(Please use this option in lab7): Run MLFLow Tracking Server on Localhost
 1. Run `mlflow server --host 127.0.0.1 --port 6001` to launch tracking server on port 6001. Show the logs in the terminal to TA for deliverable 1.
@@ -38,8 +37,22 @@ When you set tracking server, instead of running `mlflow.set_tracking_uri("<your
 - Password: Your Databricks CE password.
 For more details, please visit [Additional Reference](#Additional-Reference)
 
-### Complete the Machine Learning Pipeline
+## Complete the Machine Learning Pipeline
+In this step, we try to build a simple machine learning project to simulate real-world scenario. In _WORK_DIR/utility/pipeline.py_, we defined 3 utility functions: `data_preprocessing` function that generates train and test dataset, `train_logistic_regression` that generates trained sklearn logistic regression model, and `evaluation` function that returns accuracy of trained model on test dataset. <br><br>
+Now, we use these 3 funtions to build a training pipeline in _WORK_DIR/train_model.py_ and a inference pipeline in _WORK_DIR/load_model.py_. In this process, please check documentation in _WORK_DIR/utility/pipeline.py_ carefully. They are very helpful.
+### Complete the Training Pipeline
+In this step, we modify _WORK_DIR/train_model.py_ only.
+1. Complete the TODO in Line 22 to extract the train and test dataset from `pipeline.data_preprocessing`. This function accept now arguments and returns `X_train, X_test, y_train, y_test`
+2. Complete the TODO in Line 33 to obtain trained model from `pipeline.train_logistic_regression`. This function accepts X_train, y_train, params (sklearn logistic regression parameters) and output a fitted regressor.
+3. Complete the TODO in Line 36 to obtain accuracy score from `pipeline.evaluation`. This function accepts X_test, y_test, model and output a float type accuracy score.
+Now, we have a complete machine learning training pipeline without MLFlow component.
 
+### Complete the Inference Pipeline
+In this step, we modify _WORK_DIR/test_model.py_ only.
+1. Complete the TODO in Line 20 to predict the numpy array datapoint. You need to convert the numpy array to pandas Dataframe for inference due to the constrain of MLFlow.
+
+## Complete MLFlow Tracking and Model Registering Process
+In this step, we complete the MLFLow tracking and model registering components in _WORK_DIR/train_model.py_ and _WORK_DIR/test_model.py_. This help us to understand performance change after each run and govern the model version. <br><br>
 
 ### Additional Reference
 [Explore MLFlow with Databricks](https://mlflow.org/blog/databricks-ce)
