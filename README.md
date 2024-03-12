@@ -4,7 +4,7 @@ MLFLow is a powerful tool that enables practices aligned with MLOps principles. 
 To receive credit for this lab, please show your all deliverables to the TA during recitation.
 
 ## Deliverables
-- [ ] Show the logs of successfully launched MLFlow Tracking Server in the terminal and the UI interface of MLFlow Tracking Server. Explain to TA your process of setting up the environment for this lab.
+- [ ] Show the webpage MLFlow Tracking Server. Explain to TA your process of setting up the environment for this lab.
 - [ ] Complete the `train_model.py` and `load_model.py`. Show TA your uploaded runs in Tracking Server webpage and the console output of running `load_model.py`
 - [ ] Deploy the MLFlow model as a docker container. Show TA the console output of running `./test_inference.sh`.
 
