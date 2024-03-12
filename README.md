@@ -1,5 +1,5 @@
 # MLIP Lab7 - Manage and Track Machine Learning Project with MLFlow
-In this lab, you will explore how to manage and track Machine Learning Projects using [MLFlow](https://mlflow.org/docs/latest/index.html). Although MLFlow is helpful to team project M3, We recommend you to use the personal machine to avoid multiple installations and environmental conflict.</br></br>
+In this [lab](https://github.com/JayYu0116/MLIP_Lab7), you will explore how to manage and track Machine Learning Projects using [MLFlow](https://mlflow.org/docs/latest/index.html). Although MLFlow is helpful to team project M3, We recommend you to use the personal machine to avoid multiple installations and environmental conflict.</br></br>
 MLFLow is a powerful tool that enables good practices aligned with MLOps principles. MLFlow can track experiment results during development for late comparison. It can perform version control on dataset and model and store versioned model objects to make your project reproducible and manageable.</br></br>
 To receive credit for this lab, please show your all deliverables to the TA during recitation.
 
@@ -9,7 +9,7 @@ To receive credit for this lab, please show your all deliverables to the TA duri
 - [ ] Complete the `test_data_split` function in `test.py` to test data split step.
 
 ## Environment Setup
-In this step, we create a virtual environment, install MLFlow, and set up a tracking server. To begin this section, please clone [Lab7 repo](git@github.com:JayYu0116/MLIP_Lab7.git) to your machine. Run `cd MLIP_Lab7` to enter into the work directory. Now let us move on to the virtual environment set up.
+In this step, we create a virtual environment, install MLFlow, and set up a tracking server. To begin this section, please clone [Lab7 repo](https://github.com/JayYu0116/MLIP_Lab7) to your machine. Run `cd MLIP_Lab7` to enter into the work directory. Now let us move on to the virtual environment set up.
 ### Setup Virtual Environment 
 1. Run:
    ```bash
