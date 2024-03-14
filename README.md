@@ -73,9 +73,11 @@ Now, please **run `python load_model.py`** This should print out a prediction on
 
 ## Deploy MLFlow Registered Model as Docker Container.
 Now, we use MLFlow to help us with deployment. MLFlow can pack a registered model into a docker container server. It also provides inference protocol in [Local Inference Spec Page](https://mlflow.org/docs/latest/deployment/deploy-model-locally.html#local-inference-server-spec). Let us build a docker container based on run id we previously obtained in [Complete the loading process](#Complete-the-loading-process).
-1. According to [MLFlow models documentation](https://mlflow.org/docs/latest/cli.html?highlight=docker#mlflow-models-build-docker), run `mlflow models build-docker --model-uri "<Previously obtained runs:/ uri>" --name "lab7"` to build the docker image.
-2. Run `sudo docker run -p 6002:8080 "lab7"` to launch the server.
-3. Run `WORK_DIR/test_inference.sh` to send a test inference to the server. **Show TA the console output of test inference for deliverable 3.**
+
+1. First, run `export MLFLOW_TRACKING_URI=<Your tracking server uri>` to let the MLFlow CLI know the tracking server endpoint.
+2. According to [MLFlow models documentation](https://mlflow.org/docs/latest/cli.html?highlight=docker#mlflow-models-build-docker), run `mlflow models build-docker --model-uri "<Previously obtained runs:/ uri>" --name "lab7"` to build the docker image.
+3. Run `sudo docker run -p 6002:8080 "lab7"` to launch the server.
+4. Run `WORK_DIR/test_inference.sh` to send a test inference to the server. **Show TA the console output of test inference for deliverable 3.**
 
 ### Additional Reference
 [Explore MLFlow with Databricks](https://mlflow.org/blog/databricks-ce)
